@@ -1,8 +1,8 @@
 var express = require('express');
 var mongodb = require('mongodb');
 var bodyParser = require('body-parser');
-​
-var OBJECTID = mongodb.ObjectID;
+
+// var OBJECTID = mongodb.ObjectID;
 ​
 var CLASS_COLLECTION = "test_attendance";
 ​
@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 ​
 var db;
 ​
-mongodb.MongoClient.connect(process.env.MONGODB_URL || "mongodb://localhost:27017/test", function(err, client){
+mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/test", function(err, client){
   if(err){
     console.log(err);
     process.exit(1);
